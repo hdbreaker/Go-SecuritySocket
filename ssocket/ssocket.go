@@ -35,9 +35,9 @@ func (ss SecuritySocket) Interactive(conn net.Conn) {
 		bufRead = make([]byte, 1024)
 		conn.Read(bufRead)
 		fmt.Print(string(bufRead))
-		var input string
 		fmt.Print(">> ")
-		fmt.Scanln(&input)
+		reader := bufio.NewReader(os.Stdin)
+		input, _ := reader.ReadString('\n')
 		fmt.Fprintln(conn, input)
 	}
 }
