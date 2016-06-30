@@ -12,7 +12,7 @@ import (
 // SecuritySocket .
 type SecuritySocket struct {
 	Protocol string
-	Host		 string
+	Host     string
 }
 
 // Connect .
@@ -28,16 +28,17 @@ func (ss SecuritySocket) Send(conn net.Conn, payload string) {
 
 // Interactive .
 func (ss SecuritySocket) Interactive(conn net.Conn) {
+	bufRead := make([]byte, 1024)
+	conn.Read(bufRead)
+	fmt.Fprint(conn, "\n")
 	for {
-		input := ""
-		reply := make([]byte, 1024)
-		conn.Read(reply)
-		fmt.Println(string(reply))
-
-		fmt.Printf("$ ")
+		bufRead = make([]byte, 1024)
+		conn.Read(bufRead)
+		fmt.Print(string(bufRead))
+		var input string
+		fmt.Print(">> ")
 		fmt.Scanln(&input)
 		fmt.Fprintln(conn, input)
-
 	}
 }
 
