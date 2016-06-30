@@ -8,9 +8,11 @@ Example: # Solution with Go of Challenge https://ringzer0team.com/challenges/181
 package main
 
 import (
+
 	"bytes"
 	"encoding/binary"
 	"strings"
+	
 	"github.com/hdbreaker/Go-SecuritySocket/ssocket"
 )
 
