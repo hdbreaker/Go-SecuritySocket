@@ -1,8 +1,7 @@
 ##### http://www.securitysignal.org/2015/12/securitysocket-remote-exploit-library.html #####
 
 Install Library: go get github.com/hdbreaker/Go-SecuritySocket/ssocket
-
-Import: import "github.com/hdbreaker/Go-SecuritySocket/ssocket"
+Import Library: import "github.com/hdbreaker/Go-SecuritySocket/ssocket"
 
 Example: # Solution with Go of Challenge https://ringzer0team.com/challenges/181
 
