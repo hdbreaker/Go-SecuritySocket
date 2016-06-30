@@ -1,6 +1,7 @@
 package ssocket
 
 import (
+	"bufio"
 	"bytes"
 	"encoding/binary"
 	"fmt"
